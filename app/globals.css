@@ -1,27 +1,126 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html{
+    scroll-behavior: smooth;
+}
+.details-container { @apply p-6  bg-white border rounded-3xl border-gray-300 text-center flex-1}
+.btn {@apply font-semibold transition duration-300 ease-in p-4 w-32}
+/* 
+.dep{
+    box-shadow: inset 0 0 0 9px rgba(0, 0, 0, 0.89);
+    -webkit-animation:profile_animate 8s ease-in-out infinite 1s;
+    animation: profile_animate 8s ease-in-out infinite 1s;
+    order: 1;
+    justify-self: center;
+}
+@keyframes profile_animate{
+    0%
+    {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%
+    }
+    50%
+    {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%
+    }
+    100%
+    {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%
+    }
+}
+@-webkit-keyframes profile_animate{
+    0%
+    {
+        -webkit-border-radius: 60% 40% 30% 70%/60% 30% 70% 40%
+    }
+    50%
+    {
+        -webkit-border-radius: 30% 60% 70% 40%/50% 60% 30% 60%
+    }
+    100%
+    {
+        -webkit-border-radius: 60% 40% 30% 70%/60% 30% 70% 40%
+    }
+} */
+.circle{
+position: relative;
+width: 400px;
+height: 400px;
+background: #999;
+border-radius: 50%;
+overflow: hidden;
+}
+.circle::before
+{
+content: '';
+position: absolute;
+inset:-10px 100px;
+background: linear-gradient(#000, #000);
+transition: 0.5s;
+animation: animatedCircle 4s linear infinite
+}
+.circle::after
+{
+content: '';
+position: absolute;
+background: #fff;
+inset: 10px;
+border-radius: 50%;
+z-index: 1;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+}
+@keyframes animatedCircle {
+    0%{
+transform: rotate(0);
+    }
+    100%
+    {
+      transform: rotate(300deg);
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.content{
+    position: absolute;
+    inset:30px;
+    border:6px solid #000;
+    z-index: 3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column
+}
+.content img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    transition: 0.5;
+    text-align: center;
+    pointer-events: none;
+    z-index: 3;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.navbar{
+    height: 5.5remre3;
+    background: #fff;
+    transition: top 0.3s ease-in-out;
+    transition:box-shadow 0.3s ease-in-out ;
+}
+.sticky{
+    position:fixed;
+    box-shadow:  0 2px 4px rgb(0, 0, 0, 0.1);
+    width:100%;
+    left: 0;
+    right:0;
+    margin:auto;
+    background:#fff;
+    z-index: 100;
+}
+
+.active {
+     color:red;
+    font-weight: bold;
 }
