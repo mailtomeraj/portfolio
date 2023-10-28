@@ -77,7 +77,7 @@ const Navbar = () => {
           </div>
         </nav>
 
-        {/* Mobile version  listed menu */}
+        {/* Mobile version  listed menu dsfsdfsdf*/}
         <div
           className={menuOpen ? "left-0 top-0 w-[65%] h-screen relative bg-slate-800 ease-in duration-500 flex flex-col justify-start  z-10" : " left-[-100%]"}
         >
