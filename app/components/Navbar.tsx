@@ -21,8 +21,7 @@ const navLinks = [
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sticky, setSticky] = useState(false)
-  // const pathname = usePathname();
-  // console.log(pathname)
+
   const pathname = usePathname()
 
 
